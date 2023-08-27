@@ -1,15 +1,15 @@
 # coding: utf-8
 
-# from misskey import Misskey
+from misskey import Misskey
 
 import random
-# import os
+import os
 
-# misskey_address = os.environ.get("MISSKEY_SERVER_ADDRESS")
-# misskey_token = os.environ.get("MISSKEY_TOKEN")
+misskey_address = os.environ.get("MISSKEY_SERVER_ADDRESS")
+misskey_token = os.environ.get("MISSKEY_TOKEN")
 
-# moji3 = Misskey(misskey_address)
-# moji3.token = misskey_token
+senryu = Misskey(misskey_address)
+senryu.token = misskey_token
 
 #使える文字のリスト
 hiragana = ['ぁ', 'あ', 'ぃ', 'い', 'ぅ', 'う', 'ぇ', 'え', 'ぉ', 'お', 'か', 'が', 'き', 'ぎ', 'く', 'ぐ', 'け', 'げ', 'こ', 'ご', 'さ', 'ざ', 'し', 'じ', 'す', 'ず', 'せ', 'ぜ', 'そ', 'ぞ', 'た', 'だ', 'ち', 'ぢ', 'っ', 'つ', 'づ', 'て', 'で', 'と', 'ど', 'な', 'に', 'ぬ', 'ね', 'の', 'は', 'ば', 'ぱ', 'ひ', 'び', 'ぴ', 'ふ', 'ぶ', 'ぷ', 'へ', 'べ', 'ぺ', 'ほ', 'ぼ', 'ぽ', 'ま', 'み', 'む', 'め', 'も', 'ゃ', 'や', 'ゅ', 'ゆ', 'ょ', 'よ', 'ら', 'り', 'る', 'れ', 'ろ', 'ゎ', 'わ', 'ゐ', 'ゑ', 'を', 'ん','ー']
@@ -43,5 +43,5 @@ while True:
         break
 
 #できた川柳
-# moji3.notes_create(text=syoku+"\n"+niku+"\n"+kekku)
+senryu.notes_create(text=syoku+"\n"+niku+"\n"+kekku)
 print(syoku+"\n"+niku+"\n"+kekku)
