@@ -4,6 +4,7 @@ from misskey import Misskey
 
 import random
 import os
+import time
 
 misskey_address = os.environ.get("MISSKEY_SERVER_ADDRESS")
 misskey_token = os.environ.get("MISSKEY_TOKEN")
@@ -43,5 +44,11 @@ while True:
         break
 
 #できた川柳
-senryu.notes_create(text=syoku+"\n"+niku+"\n"+kekku)
+while True:
+    try:
+        senryu.notes_create(text=syoku+"\n"+niku+"\n"+kekku)
+    except:
+        time.sleep(300)
+    else:
+        break
 print(syoku+"\n"+niku+"\n"+kekku)
