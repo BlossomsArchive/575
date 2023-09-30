@@ -18,8 +18,6 @@ kekku = ''.join(random.choices(hiragana,k=5))
 while True:
     if syoku[0] == "ー":
         syoku = ''.join(random.choices(hiragana,k=5))
-        print(i)
-        i = i+1
     else:
         break
 
