@@ -14,27 +14,6 @@ syoku = ''.join(random.choices(hiragana,k=5))
 niku = ''.join(random.choices(hiragana,k=7))
 kekku = ''.join(random.choices(hiragana,k=5))
 
-#初句の一文字目が"ー"ならそれ以外に
-while True:
-    if syoku[0] == "ー":
-        syoku = ''.join(random.choices(hiragana,k=5))
-    else:
-        break
-
-#二句の一文字目が"ー"ならそれ以外に
-while True:
-    if niku[0] == "ー":
-        kekku = ''.join(random.choices(hiragana,k=5))
-    else:
-        break
-
-#結句の一文字目が"ー"ならそれ以外に
-while True:
-    if kekku[0] == "ー":
-        kekku = ''.join(random.choices(hiragana,k=5))
-    else:
-        break
-
 #できた川柳
 while True:
     try:
