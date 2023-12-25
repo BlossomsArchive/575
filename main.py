@@ -14,6 +14,9 @@ syoku = ''.join(random.choices(hiragana,k=5))
 niku = ''.join(random.choices(hiragana,k=7))
 kekku = ''.join(random.choices(hiragana,k=5))
 
+post_text = syoku+"\n"+niku+"\n"+kekku
+
+
 #できた川柳
 while True:
     try:
@@ -21,7 +24,7 @@ while True:
         misskey_token = os.environ.get("MISSKEY_TOKEN")
         senryu = Misskey(misskey_address)
         senryu.token = misskey_token
-        senryu.notes_create(text=syoku+"\n"+niku+"\n"+kekku)
+        senryu.notes_create(text=post_text)
     except:
         time.sleep(300)
     else:
@@ -32,7 +35,7 @@ while True:
         # Bluesky
         bluesky = Client()
         bluesky.login(str(os.environ.get("BLUESKY_MAIL_ADDRESS")),str(os.environ.get("BLUESKY_PASSWORD")))
-        bluesky.send_post(syoku+"\n"+niku+"\n"+kekku)
+        bluesky.send_post(post_text)
     except:
         time.sleep(300)
     else:
