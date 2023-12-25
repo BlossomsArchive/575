@@ -1,7 +1,7 @@
 # coding: utf-8
 
 from misskey import Misskey
-
+from atproto import Client, models
 import random
 import os
 import time
@@ -22,6 +22,17 @@ while True:
         senryu = Misskey(misskey_address)
         senryu.token = misskey_token
         senryu.notes_create(text=syoku+"\n"+niku+"\n"+kekku)
+    except:
+        time.sleep(300)
+    else:
+        break
+
+while True:
+    try:
+        # Bluesky
+        bluesky = Client()
+        bluesky.login(str(os.environ.get("BLUESKY_MAIL_ADDRESS")),str(os.environ.get("BLUESKY_PASSWORD")))
+        bluesky.send_post(syoku+"\n"+niku+"\n"+kekku)
     except:
         time.sleep(300)
     else:
